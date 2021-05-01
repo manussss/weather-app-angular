@@ -6,8 +6,10 @@ import { HttpClient, HttpParams } from '@angular/common/http'
 })
 export class WeatherService {
 
+  //require('dotenv').config();
+
   url = 'https://api.openweathermap.org/data/2.5/weather';
-  apiKey = process.env.API_KEY
+  apiKey = '12e81341e3eb4b73698e160697f304dc' //process.env.API_KEY
 
   constructor(private http: HttpClient) { }
 
