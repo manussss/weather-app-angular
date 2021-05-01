@@ -18,10 +18,19 @@ export class WeatherService {
     const params = new HttpParams()
       .set('lat',lat)
       .set('lon', lon)
-      .set('units', 'metrics')
+      .set('units', 'metric')
       .set('appid', this.apiKey)
 
       return this.http.get(this.url, { params })
+  }
+
+  // method to return the city name
+  getWeatherDataByCityName(city: string){
+    const params = new HttpParams()
+      .set('q', city)
+      .set('units', 'metric')
+      .set('appid', this.apiKey)
+    return this.http.get(this.url, { params })
   }
 
 }
